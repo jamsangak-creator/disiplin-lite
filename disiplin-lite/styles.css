@@ -1,0 +1,24 @@
+*{box-sizing:border-box}body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;margin:0;background:#f4f7fb;color:#111}
+header{background:#0B5ED7;color:#fff;padding:16px 20px}
+h1{margin:0;font-size:24px}
+.subtitle{opacity:.9;margin:.25rem 0 0}
+main{max-width:980px;margin:20px auto;padding:0 16px;display:grid;gap:16px}
+.card{background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.06);padding:16px}
+h2{margin:.3rem 0 1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+label{display:flex;flex-direction:column;font-size:14px;gap:6px}
+input,select,button{padding:10px 12px;border:1px solid #cfd7e3;border-radius:10px;font:inherit}
+input:focus,select:focus{outline:3px solid #e6f0ff;border-color:#0B5ED7}
+.actions{display:flex;gap:10px;margin-top:10px}
+button{background:#0B5ED7;color:#fff;border:none;cursor:pointer}
+button.ghost{background:#eef4ff;color:#0B5ED7}
+button.danger{background:#c62828}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:8px}
+table{width:100%;border-collapse:collapse}
+th,td{border-top:1px solid #eee;padding:8px 6px;text-align:left}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;background:#ffeeba;color:#8a6d3b}
+.stats{margin:6px 0 10px;color:#333}
+footer{padding:16px;text-align:center;color:#666}
+label.import input{display:none}
+.row-actions{display:flex;gap:8px}
+small.mute{color:#666}
