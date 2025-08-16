@@ -1,0 +1,1 @@
+let ENDPOINT = ""; const EMAIL_NOTIFY = true; const EMAIL_THRESHOLD = 3;
