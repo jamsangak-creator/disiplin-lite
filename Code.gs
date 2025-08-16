@@ -1,0 +1,6 @@
+/** Apps Script skeleton (same API) */
+const SHEET_ID='PASTE_SHEET_ID_HERE'; const SHEET_NAME='Sheet1';
+function _sheet(){const ss=SpreadsheetApp.openById(SHEET_ID);return ss.getSheetByName(SHEET_NAME)||ss.getSheets()[0];}
+function doGet(e){if((e.parameter.op||'')==='list'){const sh=_sheet();const v=sh.getDataRange().getValues();if(v.length<2)return _j({records:[]});const h=v[0].map(String);const rec=v.slice(1).map(r=>{const o={};h.forEach((x,i)=>o[x]=r[i]);return o;});return _j({records:rec});}return _j({error:'unknown op'});}
+function doPost(e){try{const p=JSON.parse(e.postData.contents||'{}');if(p.op==='add'&&p.record){const r=p.record;_sheet().appendRow([r.tarikh||'',r.masa||'',r.nama||'',r.kelas||'',r.jenis||'',r.catatan||'',r.guru||'',r.role||'',r.created_at||new Date().toISOString()]);return _j({success:true});}return _j({success:false});}catch(err){return _j({success:false,error:String(err)});}}
+function _j(o){return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON);}
