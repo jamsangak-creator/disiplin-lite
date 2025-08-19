@@ -1,0 +1,9 @@
+{
+  "name": "Disiplin Sekolah – Rekod Kesalahan Ringan",
+  "short_name": "Disiplin",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#FFFF00",
+  "theme_color": "#0B6623",
+  "icons": []
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rekod Kesalahan Disiplin Ringan</title>
+  <meta name="theme-color" content="#0B6623"/>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Rekod Kesalahan Disiplin Ringan</h1>
+    <p class="subtitle">Satu pautan, tanpa login. Boleh guna offline. Auto-sync bila ada internet.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Isi Rekod Baharu</h2>
+      <form id="recordForm">
+        <div class="grid">
+          <label>Tarikh & Masa
+            <input type="datetime-local" id="dt" required>
+          </label>
+          <label>Nama Pelajar
+            <input type="text" id="nama" placeholder="cth: Adam Bin Ali" autocomplete="off" required>
+          </label>
+          <label>Kelas
+            <input type="text" id="kelas" placeholder="cth: 3 Interaktif" autocomplete="off" required>
+          </label>
+          <label>Jenis Kesalahan
+            <select id="jenis" required>
+              <option value="">-- Pilih --</option>
+              <option>Lewat masuk kelas</option>
+              <option>Tidak bawa buku</option>
+              <option>Pakaian tidak kemas</option>
+              <option>Rambut tidak mengikut peraturan</option>
+              <option>Perhiasan/aksesori tidak dibenarkan</option>
+              <option>Makan/minum di kelas</option>
+              <option>Gadget tanpa kebenaran</option>
+              <option>Lain-lain</option>
+            </select>
+          </label>
+          <label>Ulasan / Catatan
+            <textarea id="catatan" rows="3" placeholder="Ringkas tetapi jelas..."></textarea>
+          </label>
+          <label>Nama Guru Pelapor
+            <input type="text" id="pelapor" placeholder="cth: Cikgu Jamalit" required>
+          </label>
+          <label>Lampiran Gambar (opsyenal)
+            <input type="file" id="gambar" accept="image/*" capture="environment" multiple>
+            <small>Foto akan dipek kecil untuk jimat data.</small>
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn">Simpan ke Senarai</button>
+          <button type="button" id="btnReset" class="btn ghost">Kosongkan Borang</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Senarai Belum Hantar (<span id="queueCount">0</span>)</h2>
+      <div id="queueList" class="list"></div>
+      <div class="actions">
+        <button id="btnSync" class="btn ok">Hantar &amp; Sync ke Google Sheet</button>
+        <button id="btnExport" class="btn ghost">Eksport JSON</button>
+        <button id="btnClear" class="btn danger ghost">Kosongkan Semua</button>
+      </div>
+      <p class="muted">
+        Endpoint: <code id="endpointLabel">(belum ditetapkan)</code> – tetapkan dalam <code>config.js</code>.
+      </p>
+      <p class="muted">Tip: Aplikasi ini boleh dipasang ke skrin utama & berfungsi offline.</p>
+    </section>
+
+    <section class="card">
+      <h2>Laporan Ringkas</h2>
+      <p>Lihat papan pemuka ringkas kekerapan kesalahan mengikut pelajar.</p>
+      <a class="btn ghost" href="report.html">Buka Laporan</a>
+    </section>
+  </main>
+
+  <footer>
+    <small>© Disiplin Sekolah · Versi Single-Link · PWA</small>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="utils.js"></script>
+  <script src="app.js"></script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(()=>{});
+      });
+    }
+  </script>
+</body>
+</html>
