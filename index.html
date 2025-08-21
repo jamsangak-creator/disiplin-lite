@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rekod Disiplin</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Rekod Disiplin</h1>
+
+    <form id="rekodForm" autocomplete="off">
+      <div class="field">
+        <label for="tarikh">Tarikh</label>
+        <input id="tarikh" name="tarikh" type="date" required />
+      </div>
+
+      <div class="field">
+        <label for="kelas">Kelas</label>
+        <input id="kelas" name="kelas" type="text" placeholder="cth: 3 INOVATIF" required />
+      </div>
+
+      <div class="field relative">
+        <label for="murid">Nama Murid</label>
+        <input id="murid" name="murid" type="text" placeholder="Taip 2+ huruf..." required />
+        <div id="muridHelp" class="help hidden">Taip 2+ huruf untuk carian.</div>
+        <div id="suggestions" class="suggestions hidden"></div>
+      </div>
+
+      <div class="field">
+        <label for="jenis">Jenis Kesalahan</label>
+        <input id="jenis" name="jenis" type="text" placeholder="cth: Lewat hadir ke sekolah" required />
+      </div>
+
+      <div class="field">
+        <label for="catatan">Catatan</label>
+        <textarea id="catatan" name="catatan" rows="2" placeholder="(opsyenal)"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="pengguna">Pengguna</label>
+        <input id="pengguna" name="pengguna" type="text" placeholder="Nama guru" required />
+      </div>
+
+      <div class="actions">
+        <button id="submitBtn" type="submit">Hantar</button>
+        <button id="clearBtn" type="button" class="secondary">Kosongkan</button>
+      </div>
+    </form>
+
+    <p id="msg" class="msg"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
