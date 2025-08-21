@@ -1,6 +1,6 @@
 
 // ====== KONFIG ======
-const API_URL = "https://script.google.com/macros/s/AKfycbxymXS8iJaAyGrlnhXPkCQOCIdd-EkAAo_ZXOoCeY2qQZcRbXBScfZy_nSq9H2Li1bcxg/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbyqfVwMo_F-qYRtHysAcysXyFEbQQi43kwAW4gH2xsymQAip8Un7ridmHbNg4iSXarCBQ/exec";
 
 // ====== UTIL ======
 const $ = (sel) => document.querySelector(sel);
